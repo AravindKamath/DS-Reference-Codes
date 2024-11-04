@@ -213,14 +213,14 @@ NODE deletewithinfo(NODE first, int item) {
             cur = cur->next;
             pos++;
         }
-        if (cur->data == item) {
-            printf("\n[%d] Deleted at pos = %d\n", cur->data, pos);
-            prev->next = cur->next;
+        if (cur == NULL) {
+            printf("\nItem does not Exist in Linked List\n");
             return first;
         }
         else {
-            printf("\nItem does not Exist in Linked List\n");
-            return NULL;
+            printf("\n[%d] Deleted at pos = %d\n", cur->data, pos);
+            prev->next = cur->next;
+            return first;
         }
     }
 }
